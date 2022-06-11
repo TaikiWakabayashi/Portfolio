@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Movie Seat Booking</title>
+</head>
+<body>
+
+    <!-- 背景画像用要素 -->
+    <div id="bg"></div>
+
+    <!-- 視聴映画画像 -->
+    <div id="selected-movie-image"></div>
+
+    <!-- 視聴映画＆座席選択ゾーン -->
+    <div class="movie-select-zone">
+
+        <div class="movie-container">
+    
+            <!-- 映画選択 -->
+            <label>Pick a Movie:</label>
+            <select id="movie">
+                <option value="12">The Batman ($12)</option>
+                <option value="10">Doctor Strange 2 - Multiverse of Madness ($10)</option>
+                <option value="9">Spider Man - No Way Home ($9)</option>
+                <option value="8">Justice league ($8)</option>
+            </select>
+        </div>
+    
+        <!-- 各色のシートの説明 -->
+        <ul class="showcase">
+            <li>
+                <div class="seat"></div>
+                <small>N/A</small>
+            </li>
+            <li>
+                <div class="seat selected"></div>
+                <small>Selected</small>
+            </li>
+            <li>
+                <div class="seat occupied"></div>
+                <small>occupied</small>
+            </li>
+        </ul>
+    
+        <div class="container">
+            <!-- スクリーン -->
+            <div class="screen"></div>
+    
+            <!-- シート -->
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+            </div>
+    
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat occupied"></div>
+                <div class="seat occupied"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+            </div>
+    
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat occupied"></div>
+                <div class="seat occupied"></div>
+            </div>
+    
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat occupied"></div>
+                <div class="seat occupied"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+            </div>
+    
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat occupied"></div>
+                <div class="seat occupied"></div>
+                <div class="seat occupied"></div>
+                <div class="seat"></div>
+            </div>
+        </div>
+    
+        <!-- 金額と選択シート数の表示 -->
+        <p class="text">
+            You have selected <span id="count">0</span> seat for a price of $<span id="total">0</span>
+        </p>
+    </div>
+
+    <script src="JS/script.js"></script>
+</body>
+</html>
