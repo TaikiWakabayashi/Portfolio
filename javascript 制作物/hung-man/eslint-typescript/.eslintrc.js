@@ -1,3 +1,4 @@
+
 module.exports = {
     root: true,
     parser: "@typescript-eslint/parser",
@@ -14,9 +15,9 @@ module.exports = {
     },
     ignorePatterns: ["dist"],
     extends:[
-        "air-bnb-base",
-        "air-bnb-typescript/base",
-        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        // "air-bnb-base",
+        // "air-bnb-typescript/base",
+        // "plugin:@typescript-eslint/recommended-requiring-type-checking",
     ],
     rules: {
         "import/prefer-default-export": "off",
