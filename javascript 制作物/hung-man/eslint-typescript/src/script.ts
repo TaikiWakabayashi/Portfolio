@@ -8,14 +8,21 @@ const finalMessage = document.getElementById('final-message');
 const finalMessageRevealWord = document.getElementById('final-message-reveal-word');
 
 /**
- * TypescriptでquerySelector もしくは querySelectorAllを使用するなら。
- * <>ジェネリクスで型を指定すること。（そのままだとNodeList<Element>になり、styleが使えないなど面倒。
+ * if you use "querySelector" or "querySelectorAll" in Typescript,
+ * you need to use <>(generics) and specify of the type.
  */
 const figureParts = document.querySelectorAll<HTMLElement>('.figure-part');
 
-const words: string[] = ['application', 'Typescript', 'engineering', 'prototype', 'interface'];
+const words: string[] = ['application', 'typescript', 'engineering', 'prototype', 'interface'];
 
-
+/**
+ *  Math.floor() method is a method that returns the largest integer
+ * less than or equal to a specified number;
+ */ 
+/**
+ * math.random() is a method that returns a random number
+ * greater than or equal to 0 and lass than 1.
+ */ 
 let selectedWord: string = words[Math.floor(Math.random() * words.length)];
 
 let playable: boolean = true;
@@ -119,8 +126,9 @@ function showNotification() {
 
 // keydown letter press
 window.addEventListener('keydown', e => {
+    console.log("adEventListenerを開始");
     if(playable) {
-        if(e.key.match(/[A-Z]/)){
+        if(/^[A-Z]$/i.test(e.key)){
             const letter = e.key.toLowerCase();
 
             if(selectedWord.includes(letter)) {
@@ -151,10 +159,15 @@ playAgainBtn.addEventListener('click', () => {
     // Empty arrays
     /**
      * splice = 引数で指定したindex以降の要素を取り除く
+     * 
+     * 既存の選択されたワードと、エラーワードをリセット
      */
     correctLetters.splice(0);
     wrongLetters.splice(0);
 
+    /**
+     * select a new keyWord from the array.
+     */
     selectedWord = words[Math.floor(Math.random() * words.length)];
 
     displayWord();
@@ -166,3 +179,4 @@ playAgainBtn.addEventListener('click', () => {
 
 
 displayWord();
+
