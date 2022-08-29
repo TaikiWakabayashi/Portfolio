@@ -28,38 +28,44 @@ var wrongLetters = [];
  */
 function displayWord() {
     /**
-     * innerHTML = 要素内のHTMLを設定することができる。
+     * innerHTML = this method can set the HTML inside the element.
      */
     wordEl.innerHTML =
         "".concat(selectedWord
             /**
-             * split = 対象の文字列を引数で指定した文字で分割し、
-             * 分割された文字列をそれぞれの要素として "格納した配列" として返す。
+             * split = Divides the target string by the specified character,
+             * returns the characters in an array.
+             *
+             * example )
+             * 'HTML'.splice('') = ['H','T','M','L'];
              */
             .split('')
             /**
-             * 対象の配列に対し、順番に同じ引数内の処理を繰り返し、
-             * 新しい配列として返す。
+             * Repeat the process by the arguments for the elements in the target array,
+             * stores it in a new array, and returns it.
              */
             .map(function (letter) {
             return "<span class = \"letter\">\n        ".concat(correctLetters.includes(letter) ? letter : '', "\n        </span>\n        ");
         })
             /**
-             * 対象の配列に対し、引数で指定した区切り文字をもとに、
-             * 全要素を順に連結した "文字列" を作成する。
+             * Create a string by concatenating the elements
+             * in the based on the delimiter specified by the arguments.
              */
             .join(''), "\n    ");
     /**
-     * innerText = 要素内のテキストを取得する。
+     * innerText = This method can get HTML inside the elements.
      *
-     * replace = 正規表現で検索する文字列を/ /で囲む。
-     * また、/の後につく"g"はグローバルマッチといい、一致したものを全て置換するオプション。
+     * replace = Enclose in / /
+     * the string to be searched for by the regular expression.
+     *
+     * The "G" after the slash means  "global match".
+     * It is option ti replace all matching characters.
      */
     var innerWord = wordEl.innerText.replace(/[ \n]/g, '');
     /**
-     * ランダムで選択された文字と、入力した文字が同じだった場合、
-     * finalMessageにメッセージを表示し、
-     * 入力して明らかになった文字列（finalMessageRevealWord）を初期化する。
+     * if innerWord and selectedWord are the same,
+     * set Congratulations! You won! 😄 ,
+     * and show finalMessage and popup.
      */
     if (innerWord == selectedWord) {
         finalMessage.innerText = 'Congratulations! You won! 😄 ';
@@ -132,9 +138,9 @@ playAgainBtn.addEventListener('click', function () {
     playable = true;
     // Empty arrays
     /**
-     * splice = 引数で指定したindex以降の要素を取り除く
+     * splice = Remove elements after the specified Index number.
      *
-     * 既存の選択されたワードと、エラーワードをリセット
+     * remove existing hidden word and wrong words in array.
      */
     correctLetters.splice(0);
     wrongLetters.splice(0);
